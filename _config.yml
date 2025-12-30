@@ -1,0 +1,73 @@
+# Site Configuration
+title: InfraPulse
+description: A personal tech blog covering infrastructure, networking, automation, and DevOps
+author: Kunal Vaidya
+email: kunal.vaidya@example.com
+url: https://kunal-vaidya.github.io
+baseurl: "" # the subpath of your site, e.g. /blog
+github_username: kunal-vaidya
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git
+  - .gitignore
+  - README.md
+  - LICENSE
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Theme settings
+theme: null
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Tags
+    url: /tags
+  - title: Search
+    url: /search
+  - title: Contact
+    url: /contact
+
+# Social links
+social:
+  github: kunal-vaidya
+  twitter: ""
+  linkedin: ""
+  email: kunal.vaidya@example.com
+
+# SEO
+lang: en-US
+timezone: America/Los_Angeles
+
+# Kramdown settings
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+

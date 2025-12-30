@@ -1,0 +1,39 @@
+---
+layout: default
+title: Search
+---
+
+<div class="container search-container">
+  <header class="page-header">
+    <h1>Search</h1>
+    <p>Search through all blog posts</p>
+  </header>
+  
+  <input 
+    type="text" 
+    id="search-box" 
+    class="search-box" 
+    placeholder="Type to search posts..."
+    aria-label="Search blog posts"
+  />
+  
+  <div id="search-results" class="search-results">
+    <p class="no-results">Type at least 2 characters to search...</p>
+  </div>
+  
+  <!-- Hidden data for search index -->
+  <script type="application/json" data-posts>
+  [
+    {% for post in site.posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "content": {{ post.content | strip_html | jsonify }},
+      "tags": {{ post.tags | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  </script>
+</div>
+

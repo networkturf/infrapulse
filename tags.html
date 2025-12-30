@@ -1,0 +1,40 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="container tags-container">
+  <header class="page-header">
+    <h1>Tags</h1>
+    <p>Browse posts by topic</p>
+  </header>
+  
+  {% assign all_tags = site.posts | map: 'tags' | flatten | uniq | sort %}
+  {% assign tag_counts = site.posts | map: 'tags' | flatten | group_by: tag | sort: 'size' | reverse %}
+  
+  <section class="tag-cloud">
+    {% for tag in all_tags %}
+      {% assign count = site.posts | where_exp: "post", "post.tags contains tag" | size %}
+      {% assign size = count | times: 1.0 | divided_by: 10 | floor | plus: 1 %}
+      {% if size > 5 %}{% assign size = 5 %}{% endif %}
+      <a href="#{{ tag | slugify }}" class="tag-cloud-item tag-size-{{ size }} tag-link">
+        {{ tag }} ({{ count }})
+      </a>
+    {% endfor %}
+  </section>
+  
+  {% for tag in all_tags %}
+    {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+    {% if tagged_posts.size > 0 %}
+    <section class="tag-section" id="{{ tag | slugify }}">
+      <h2 class="tag-section-title">{{ tag }}</h2>
+      <div class="posts-list">
+        {% for post in tagged_posts %}
+          {% include post-card.html post=post %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  {% endfor %}
+</div>
+

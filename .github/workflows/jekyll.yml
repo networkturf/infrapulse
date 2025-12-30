@@ -1,0 +1,37 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    
+    - name: Install dependencies
+      run: bundle install
+    
+    - name: Build site
+      run: bundle exec jekyll build
+    
+    - name: Test build
+      run: |
+        if [ -d "_site" ]; then
+          echo "Build successful"
+        else
+          echo "Build failed"
+          exit 1
+        fi
+

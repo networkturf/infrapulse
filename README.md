@@ -1,54 +1,156 @@
-<header>
+# InfraPulse - Personal Tech Blog
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+A professional Jekyll-based tech blog for GitHub Pages, featuring a modern UI, blog posts, tags, search functionality, and more.
 
-# GitHub Pages
+## Features
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+- 🎨 **Modern & Clean Design**: Professional UI with dark/light mode support
+- 📱 **Responsive**: Mobile-first design that works on all devices
+- 🔍 **Search**: Client-side search functionality for all blog posts
+- 🏷️ **Tags**: Organize posts with tags and browse by topic
+- 📝 **Markdown Support**: Write posts in Markdown with syntax highlighting
+- ⚡ **Fast**: Optimized for performance with minimal dependencies
+- ♿ **Accessible**: Semantic HTML and proper ARIA labels
+- 🔎 **SEO-Friendly**: Meta tags, structured data, and sitemap
 
-</header>
+## Setup
 
-<!--
-  <<< Author notes: Step 1 >>>
-  Choose 3-5 steps for your course.
-  The first step is always the hardest, so pick something easy!
-  Link to docs.github.com for further explanations.
-  Encourage users to open new tabs for steps!
--->
+### Prerequisites
 
-## Step 1: Enable GitHub Pages
+- Ruby 3.1 or higher
+- Bundler gem
 
-_Welcome to GitHub Pages and Jekyll :tada:!_
+### Installation
 
-The first step is to enable GitHub Pages on this [repository](https://docs.github.com/en/get-started/quickstart/github-glossary#repository). When you enable GitHub Pages on a repository, GitHub takes the content that's on the main branch and publishes a website based on its contents.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/infrapulse.git
+   cd infrapulse
+   ```
 
-### :keyboard: Activity: Enable GitHub Pages
+2. Install dependencies:
+   ```bash
+   bundle install
+   ```
 
-1. Open a new browser tab, and work on the steps in your second tab while you read the instructions in this tab.
-1. Under your repository name, click **Settings**.
-1. Click **Pages** in the **Code and automation** section.
-1. Ensure "Deploy from a branch" is selected from the **Source** drop-down menu, and then select `main` from the **Branch** drop-down menu.
-1. Click the **Save** button.
-1. Wait about _one minute_ then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
-   > Turning on GitHub Pages creates a deployment of your repository. GitHub Actions may take up to a minute to respond while waiting for the deployment. Future steps will be about 20 seconds; this step is slower.
-   > **Note**: In the **Pages** of **Settings**, the **Visit site** button will appear at the top. Click the button to see your GitHub Pages site.
+3. Build the site locally:
+   ```bash
+   bundle exec jekyll serve
+   ```
 
-<footer>
+4. Open your browser and navigate to `http://localhost:4000`
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+## Writing Posts
+
+### Creating a New Post
+
+1. Create a new file in the `_posts/` directory
+2. Name it using the format: `YYYY-MM-DD-post-title.md`
+3. Add front matter at the top:
+
+```yaml
+---
+layout: post
+title: "Your Post Title"
+date: 2024-01-15
+author: Your Name
+tags:
+  - Tag1
+  - Tag2
+---
+```
+
+4. Write your content in Markdown below the front matter
+
+### Post Front Matter Options
+
+- `layout`: Should be `post`
+- `title`: The post title (required)
+- `date`: Publication date in `YYYY-MM-DD` format (required)
+- `author`: Author name (optional, defaults to site author)
+- `tags`: Array of tags for the post (optional)
+- `excerpt`: Custom excerpt (optional, auto-generated if not provided)
+
+## Customization
+
+### Site Configuration
+
+Edit `_config.yml` to customize:
+- Site title and description
+- Author information
+- Social media links
+- Navigation menu
+- Pagination settings
+
+### Styling
+
+The main stylesheet is located at `assets/css/main.scss`. You can customize:
+- Colors (CSS variables in `:root`)
+- Typography
+- Spacing
+- Layout
+
+### Navigation
+
+Edit `_data/navigation.yml` to modify the navigation menu.
+
+## Deployment
+
+### GitHub Pages
+
+1. Push your code to a GitHub repository
+2. Go to repository Settings → Pages
+3. Select the source branch (usually `main` or `master`)
+4. GitHub Pages will automatically build and deploy your site
+
+### Custom Domain
+
+1. Add a `CNAME` file to the root with your domain name
+2. Configure DNS records as per GitHub Pages documentation
+3. Update the `url` in `_config.yml` to your custom domain
+
+## Project Structure
+
+```
+infrapulse/
+├── _config.yml          # Site configuration
+├── _data/               # Data files (navigation, etc.)
+├── _includes/           # Reusable components
+├── _layouts/            # Page layouts
+├── _posts/              # Blog posts
+├── assets/              # CSS, JS, and images
+│   ├── css/
+│   └── js/
+├── .github/             # GitHub Actions workflows
+└── README.md            # This file
+```
+
+## Technologies Used
+
+- **Jekyll 4.x**: Static site generator
+- **Liquid**: Templating language
+- **SASS**: CSS preprocessor
+- **Vanilla JavaScript**: No frameworks for simplicity
+- **GitHub Pages**: Hosting
+
+## Plugins
+
+- `jekyll-feed`: RSS feed generation
+- `jekyll-sitemap`: Sitemap generation
+- `jekyll-seo-tag`: SEO optimization
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Support
+
+For issues, questions, or suggestions, please open an issue on GitHub.
 
 ---
 
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+**Happy Blogging!** 🚀

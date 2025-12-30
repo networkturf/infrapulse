@@ -1,0 +1,20 @@
+<article class="post-card">
+  <div class="post-card-content">
+    <h3 class="post-card-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h3>
+    <div class="post-card-meta">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %d, %Y" }}</time>
+      {% if post.tags.size > 0 %}
+      <div class="post-card-tags">
+        {% include tag-list.html tags=post.tags %}
+      </div>
+      {% endif %}
+    </div>
+    {% if post.excerpt %}
+    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    {% endif %}
+    <a href="{{ post.url | relative_url }}" class="post-card-link">Read more →</a>
+  </div>
+</article>
+

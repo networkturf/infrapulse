@@ -1,0 +1,10 @@
+{% if tags.size > 0 %}
+<ul class="tag-list">
+  {% for tag in tags %}
+  <li class="tag-item">
+    <a href="{{ '/tags' | relative_url }}#{{ tag | slugify }}" class="tag-link">{{ tag }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+

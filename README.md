@@ -17,8 +17,19 @@ A professional Jekyll-based tech blog for GitHub Pages, featuring a modern UI, b
 
 ### Prerequisites
 
-- Ruby 3.1 or higher
+- Ruby 2.7.0 or higher (Ruby 3.1+ recommended)
 - Bundler gem
+
+**Note**: If you have an older Ruby version, you'll need to upgrade. You can use:
+- [rbenv](https://github.com/rbenv/rbenv) (recommended)
+- [rvm](https://rvm.io/)
+- [asdf](https://asdf-vm.com/)
+
+After installing a Ruby version manager, install Ruby 3.1:
+```bash
+rbenv install 3.1.0
+rbenv local 3.1.0
+```
 
 ### Installation
 

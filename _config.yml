@@ -4,7 +4,7 @@ description: A personal tech blog covering infrastructure, networking, automatio
 author: Kunal Vaidya
 email: kunal.vaidya@example.com
 url: https://infrapulse.github.io
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" # empty for user/organization site, or "/repository-name" for project site
 github_username: kunal-vaidya
 
 # Build settings

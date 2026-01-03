@@ -8,9 +8,7 @@ title: Tags
     <h1>Tags</h1>
     <p>Browse posts by topic</p>
   </header>
-  
-  {% assign all_tags = site.posts | map: 'tags' | flatten | compact | uniq | sort %}
-  
+
   <section class="tag-cloud">
     {% for tag in all_tags %}
       {% if tag and tag != '' %}

@@ -3,7 +3,7 @@ title: InfraPulse
 description: A personal tech blog covering infrastructure, networking, automation, and DevOps
 author: Kunal Vaidya
 email: kunal.vaidya@example.com
-url: https://infrapulse.github.io
+url: https://networkturf.github.io
 baseurl: "" # empty for user/organization site, or "/repository-name" for project site
 github_username: kunal-vaidya
 
